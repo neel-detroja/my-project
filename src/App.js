@@ -9,10 +9,10 @@ function App() {
   return (
     <>
       {/* <Timefild /> */}
-      <Datatable />
+      {/* <Datatable /> */}
       {/* <Dailog /> */}
       {/* <Todo /> */}
-      {/* <Inputfild /> */}
+      <Inputfild />
     </>
   );
 }
@@ -43,3 +43,8 @@ export default App;
 // => react task
 // => decript data and show msg, user is online or not
 // => store user data and profile in fiarbase
+
+// Today's Work:-
+// => create textField and add textfield using onchange,
+// => Forwarding Refs, Fragments, Keyed Fragments,
+//    Keyed Fragments 
