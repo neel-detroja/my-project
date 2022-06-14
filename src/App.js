@@ -1,15 +1,20 @@
 import './App.css';
 // import Dailog from './components/Dailog';
 import Datatable from './components/Datatable';
+// import Todo from './components/Todo';
+import Inputfild from './components/Inputfild';
 // import Timefild from './components/Timefild';
 
-
 function App() {
-    return (
-        // <Timefild />
-        <Datatable />
-        // <Dailog />
-    );
+  return (
+    <>
+      {/* <Timefild /> */}
+      <Datatable />
+      {/* <Dailog /> */}
+      {/* <Todo /> */}
+      {/* <Inputfild /> */}
+    </>
+  );
 }
 
 export default App;
