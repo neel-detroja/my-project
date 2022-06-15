@@ -1,43 +1,47 @@
-import React, { useState } from 'react';
-import { TextField } from '@mui/material';
+import React, { useState } from "react";
+import { TextField } from "@mui/material";
 
 function Inputfild() {
-  const [data, setData] = useState(['']);
+  const [data, setData] = useState([""]);
+
+  console.log("deta", data);
 
   const handlechange = (e, i) => {
-    e.preventDefult();
+    setData((pre) => {
 
-    setData((pre)=> {
       pre[i] = e.target.value;
-      if(e.target.value !== "") {
-        if(pre[data.length - 1] !== "") {
+      if (e.target.value !== "") {
+        if (pre[data.length - 1] !== "") {
           pre.push("");
         }
+      } else {
+        pre.splice(i, 1);
       }
-      else {
-        pre.pop("")
-      }
-    })
-
-
+      return [...pre];
+    });
   };
 
   return (
     <>
       {data?.map((item, i) => {
-        <TextField
-          sx={{ left: '800px', top: '20px' }}
-          required
-          id="filled-required"
-          label="Required"
-          variant="filled"
-          value={data}
-          onChange={(e) => handlechange(e, i)}
-
-        />
+        return (
+          <>
+            <div key={i}>
+            <TextField
+              sx={{ left: "45%", top: "20px" }}
+              required
+              id="filled-required"
+              label="Required"
+              variant="filled"
+              value={item}
+              onChange={(e) => handlechange(e, i)}
+            />
+            <br />
+            <br />
+            </div>
+          </>
+        );
       })}
-
-      
     </>
   );
 }
