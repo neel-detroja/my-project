@@ -6,8 +6,11 @@ function Inputfild() {
 
   console.log("deta", data);
 
-  const handlechange = (e, i, key) => {
+
+  const handlechange = (e, i,) => {
     setData((prestate) => {
+  const {name, value} = e.target;
+
       prestate[i].data1 = e.target.value;
 
       // prestate[i].data1 = e.target.value;
