@@ -1,18 +1,22 @@
 import './App.css';
+import Showtabledata from './components/Showtabledata';
 // import Dailog from './components/Dailog';
-// import Datatable from './components/Datatable';
+// import Apidatatable from './components/Apidatatable';
+// import Tabledata from './components/Tabledata';
 // import Todo from './components/Todo';
-import Inputfild from './components/Inputfild';
+// import Inputfild from './components/Inputfild';
 // import Timefild from './components/Timefild';
 
 function App() {
   return (
     <>
       {/* <Timefild /> */}
-      {/* <Datatable /> */}
+      {/* <Apidatatable /> */}
       {/* <Dailog /> */}
       {/* <Todo /> */}
-      <Inputfild />
+      {/* <Inputfild /> */}
+      {/* <Tabledata /> */}
+      <Showtabledata />
     </>
   );
 }
@@ -55,4 +59,8 @@ export default App;
 
 
 // Today's Work:-
+// => Create two input fields and add/remove Fields using an array of Object
+
+// Today's Work:-
+// => hooks- useState, useEffect, useRef, useReducer,
 // => Create two input fields and add/remove Fields using an array of Object

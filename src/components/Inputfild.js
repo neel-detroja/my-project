@@ -6,27 +6,43 @@ function Inputfild() {
 
   console.log("deta", data);
 
+  const handleChange = (e, i, type) => {
+    if (type === "data1") {
+      setData((preState) => {
+        preState[i].data1 = e.target.value;
+        return [...preState];
+      });
+    }
+    if (type === "data2") {
+      setData((preState) => {
 
-  const handlechange = (e, i,) => {
-    setData((prestate) => {
-  const {name, value} = e.target;
+        preState[i].data2 = e.target.value;
 
-      prestate[i].data1 = e.target.value;
+        if (preState[i].data2 !== "") {
 
-      // prestate[i].data1 = e.target.value;
-      // prestate[i].data2 = e.target.value;
+          console.log("==>length",preState[i].data2.length);
 
-      // prestate[i] = e.target.value;
-      if (e.target.value !== "") {
-        if (prestate[data.length - 1] !== "") {
-          prestate.push({ data1: "", data2: "" });
-        }
-      } else {
-        prestate.splice(i, 1);
-      }
+          if (preState[data.length - 1] !== "" && preState[i].data2.length  === 1 ) {
 
-      return [...prestate];
-    });
+          console.log("==>length2",preState[i].data2.length);
+
+            preState.push({ data1: "", data2: "" });
+          }
+        } else {
+          // preState.splice(i, 1);
+          preState.pop(i, 1)
+        } 
+        // if (e.target.value !== "") {
+        //     if (preState[data.length - 1] !== "" ) {
+        //       preState.push({ data1: "", data2: "" });
+        //     }
+        //   } else {
+        //     preState.splice(i, 1);
+        //   }
+
+        return [...preState];
+      });
+    }
   };
 
   return (
@@ -40,9 +56,10 @@ function Inputfild() {
               placeholder="Enter value"
               id="filled-required"
               // label="Required"
+              //   name={data1}
               variant="filled"
               value={item.data1}
-              onChange={(e) => handlechange(e, i, "data1")}
+              onChange={(e) => handleChange(e, i, "data1")}
             />
 
             <TextField
@@ -51,9 +68,10 @@ function Inputfild() {
               id="filled-require"
               placeholder="Enter value"
               // label="Required"
+              //   name={data2}
               variant="filled"
               value={item.data2}
-              onChange={(e) => handlechange(e, i, "data2")}
+              onChange={(e) => handleChange(e, i, "data2")}
             />
             <br />
             <br />

@@ -13,7 +13,7 @@ import {
 import React, { useEffect, useState } from 'react';
 import Dailog from './Dailog';
 import DeleteIcon from '@mui/icons-material/Delete';
-function Datatable() {
+function Apidatatable() {
   const [tableData, setTableData] = useState([]);
 
   console.log('==>tabledata', tableData);
@@ -67,6 +67,7 @@ function Datatable() {
             <TableBody>
               {tableData.map((item, i) => {
                 return (
+                  <>
                   <TableRow key={i}>
                     <TableCell sx={{ textAlign: 'center' }}>{item.id}</TableCell>
                     <TableCell sx={{ textAlign: 'center' }}>{item.title}</TableCell>
@@ -93,6 +94,7 @@ function Datatable() {
                     </TableCell>
                     {/* <TableCell></TableCell> */}
                   </TableRow>
+                  </>
                 );
               })}
             </TableBody>
@@ -103,4 +105,4 @@ function Datatable() {
   );
 }
 
-export default Datatable;
+export default Apidatatable;
